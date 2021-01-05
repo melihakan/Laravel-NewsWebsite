@@ -1,7 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="ab0a8496-ffb9-45ef-8bd1-384df85c1008" name="Default Changelist" comment="" />
+    <list default="true" id="ab0a8496-ffb9-45ef-8bd1-384df85c1008" name="Default Changelist" comment="NewsController add">
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/HomeController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/Category.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/News.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2021_01_02_171143_create_categories_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2021_01_04_173603_create_news_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2021_01_04_174616_news.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/_blank.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/_content.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/_footer.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/_header.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/_sidebar.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/category.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/category_add.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/category_edit.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/index.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/login.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/news.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/news_add.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/news_edit.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/layouts/admin.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/Authenticate.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/Authenticate.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/filesystems.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/filesystems.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home/_header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/_header.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -10,6 +55,9 @@
   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -137,17 +185,42 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Laravel4" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/admin" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="inlay.hints" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
-  <component name="RunManager">
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\php\Laravel4j\resources\views\admin" />
+    </key>
+  </component>
+  <component name="RunManager" selected="PHPUnit.phpunit.xml">
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
-      <TestRunner scope="XML" />
+      <CommandLine>
+        <PhpTestInterpreterSettings>
+          <option name="interpreterName" value="PHP" />
+        </PhpTestInterpreterSettings>
+      </CommandLine>
+      <TestRunner configuration_file="$PROJECT_DIR$/phpunit.xml" scope="XML" />
       <method v="2" />
     </configuration>
+    <configuration name="CategoryController.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/app/Http/Controllers/Admin/CategoryController.php">
+      <CommandLine>
+        <PhpTestInterpreterSettings>
+          <option name="interpreterName" value="PHP" />
+        </PhpTestInterpreterSettings>
+      </CommandLine>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="PHP Script.CategoryController.php" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -161,22 +234,110 @@
       <workItem from="1606757903780" duration="8862000" />
       <workItem from="1606816035489" duration="2585000" />
       <workItem from="1606897634729" duration="9529000" />
-      <workItem from="1607275637482" duration="3328000" />
+      <workItem from="1607275637482" duration="4206000" />
+      <workItem from="1607280133603" duration="560000" />
+      <workItem from="1608382147851" duration="662000" />
+      <workItem from="1608490824528" duration="34000" />
+      <workItem from="1608811348965" duration="3421000" />
+      <workItem from="1609092793651" duration="243000" />
+      <workItem from="1609514112777" duration="12604000" />
+      <workItem from="1609599597458" duration="17804000" />
+      <workItem from="1609688643963" duration="14427000" />
+      <workItem from="1609703167172" duration="3739000" />
+      <workItem from="1609779016914" duration="20172000" />
+      <workItem from="1609860117740" duration="304000" />
+      <workItem from="1609866188136" duration="2030000" />
     </task>
+    <task id="LOCAL-00001" summary="category add">
+      <created>1609867214253</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1609867214253</updated>
+    </task>
+    <task id="LOCAL-00002" summary="NewsController add">
+      <created>1609867522032</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1609867522032</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="category add" />
+    <MESSAGE value="NewsController add" />
+    <option name="LAST_COMMIT_MESSAGE" value="NewsController add" />
+  </component>
   <component name="WindowStateProjectService">
-    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1606742846377">
+    <state x="482" y="55" key="#PHP" timestamp="1609699793852">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1606742846377" />
-    <state x="604" y="336" key="NewPhpFileDialog" timestamp="1607278914609">
+    <state x="482" y="55" key="#PHP/0.0.1536.824@0.0.1536.824" timestamp="1609699793852" />
+    <state x="361" y="71" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1609531146112">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="604" y="336" key="NewPhpFileDialog/0.0.1536.824@0.0.1536.824" timestamp="1607278914609" />
+    <state x="361" y="71" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1609531146112" />
+    <state x="533" y="214" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1609801017958">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="533" y="214" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1609801017958" />
+    <state x="499" y="167" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1609791900461">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="499" y="167" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.824@0.0.1536.824" timestamp="1609791900461" />
+    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1609514168796">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1609514168796" />
+    <state width="1493" height="210" key="GridCell.Tab.0.bottom" timestamp="1609711662464">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1609711662464" />
+    <state width="1493" height="210" key="GridCell.Tab.0.center" timestamp="1609711662463">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1609711662463" />
+    <state width="1493" height="210" key="GridCell.Tab.0.left" timestamp="1609711662463">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1609711662463" />
+    <state width="1493" height="210" key="GridCell.Tab.0.right" timestamp="1609711662463">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1609711662463" />
+    <state x="604" y="336" key="NewPhpFileDialog" timestamp="1609610974334">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="604" y="336" key="NewPhpFileDialog/0.0.1536.824@0.0.1536.824" timestamp="1609610974334" />
+    <state x="414" y="74" key="SettingsEditor" timestamp="1609868360657">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="414" y="74" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1609868360657" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1609867532298">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1609867532298" />
+    <state x="425" y="187" key="run.anything.popup" timestamp="1609609425902">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1609609425902" />
     <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1607276120322">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
