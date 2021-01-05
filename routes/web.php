@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,11 +20,11 @@ Route::get('/home2', function () {
 Route::get('/', function () {
     return view('home.index');
 });
-Route::get('/home',[HomeController::class,'index'])->name('home');
+Route::get('/home', [HomeController::class, 'index'])->name('home');
 
-Route::get('/test/{id}/{name}',[\App\Http\Controllers\HomeController::class,'test'])->whereNumber('id')->whereAlpha('name')->name('test');
+Route::get('/test/{id}/{name}', [\App\Http\Controllers\HomeController::class, 'test'])->whereNumber('id')->whereAlpha('name')->name('test');
 
-Route::middleware('auth')->prefix('admin')->group(function(){
+Route::middleware('auth')->prefix('admin')->group(function () {
 
     Route::get('/', [\App\Http\Controllers\Admin\HomeController::class, 'index'])->name('admin_home');
 
@@ -34,34 +35,30 @@ Route::middleware('auth')->prefix('admin')->group(function(){
     Route::post('category/update/{id}', [\App\Http\Controllers\Admin\CategoryController::class, 'update'])->name('admin_category_update');
     Route::get('category/delete/{id}', [\App\Http\Controllers\Admin\CategoryController::class, 'destroy'])->name('admin_category_delete');
     Route::get('category/show', [\App\Http\Controllers\Admin\CategoryController::class, 'show'])->name('admin_category_show');
+#News
+    Route::prefix('news')->group(function () {
+
+        Route::get('/', [\App\Http\Controllers\Admin\NewsController::class, 'index'])->name('admin_news');
+        Route::get('/create', [\App\Http\Controllers\Admin\NewsController::class, 'create'])->name('admin_news_add');
+        Route::post('/store', [\App\Http\Controllers\Admin\NewsController::class, 'store'])->name('admin_news_store');
+        Route::get('/edit/{id}', [\App\Http\Controllers\Admin\NewsController::class, 'edit'])->name('admin_news_edit');
+        Route::post('/update/{id}', [\App\Http\Controllers\Admin\NewsController::class, 'update'])->name('admin_news_update');
+        Route::get('/delete/{id}', [\App\Http\Controllers\Admin\NewsController::class, 'destroy'])->name('admin_news_delete');
+        Route::get('/show', [\App\Http\Controllers\Admin\NewsController::class, 'show'])->name('admin_news_show');
+    });
+#Image
+    Route::prefix('image')->group(function () {
+        Route::get('/create/{news_id}', [\App\Http\Controllers\Admin\ImageController::class, 'create'])->name('admin_image_add');
+        Route::post('/store/{news_id}', [\App\Http\Controllers\Admin\ImageController::class, 'store'])->name('admin_image_store');
+        Route::get('/delete/{id}/{news_id}', [\App\Http\Controllers\Admin\ImageController::class, 'destroy'])->name('admin_image_delete');
+        Route::get('/show', [\App\Http\Controllers\Admin\ImageController::class, 'show'])->name('admin_image_show');
+    });
 });
 
 
-    #News
-    Route::prefix('news')->group(function (){
-
-        Route::get('/',[\App\Http\Controllers\Admin\NewsController::class, 'index'])->name('admin_news');
-        Route::get('/create',[\App\Http\Controllers\Admin\NewsController::class, 'create'])->name('admin_news_add');
-        Route::post('/store',[\App\Http\Controllers\Admin\NewsController::class, 'store'])->name('admin_news_store');
-        Route::get('/edit/{id}',[\App\Http\Controllers\Admin\NewsController::class, 'edit'])->name('admin_news_edit');
-        Route::post('/update/{id}',[\App\Http\Controllers\Admin\NewsController::class, 'update'])->name('admin_news_update');
-        Route::get('/delete/{id}',[\App\Http\Controllers\Admin\NewsController::class, 'destroy'])->name('admin_news_delete');
-        Route::get('/show',[\App\Http\Controllers\Admin\NewsController::class, 'show'])->name('admin_news_show');
-
-
-    });
-
-
-
-Route::get('/admin/login',[HomeController::class,'login'])->name('admin_login');
-Route::get('/admin/logout',[HomeController::class,'login'])->name('admin_logout');
-Route::post('/admin/logincheck',[HomeController::class,'logincheck'])->name('admin_logincheck');
-
-
-
-
-
-
+Route::get('/admin/login', [HomeController::class, 'login'])->name('admin_login');
+Route::get('/admin/logout', [HomeController::class, 'login'])->name('admin_logout');
+Route::post('/admin/logincheck', [HomeController::class, 'logincheck'])->name('admin_logincheck');
 
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {

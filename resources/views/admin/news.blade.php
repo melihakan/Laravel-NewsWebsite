@@ -44,6 +44,7 @@
                                                 <th>Parent</th>
                                                 <th>Title(s)</th>
                                                 <th>Images</th>
+                                                <th>Images Gallery</th>
                                                 <th>Status</th>
                                                 <th>Edit</th>
                                                 <th>Delete</th>
@@ -62,6 +63,8 @@
                                                             <img src = "{{Storage::url($rs->image)}}" height="30" alt="">
                                                         @endif
                                                     </td>
+                                                    <td><a href="{{route('admin_image_add',['news_id' => $rs->id])}}" onclick="return !window.open(this.href,'','top=50 left=100 width=1100,height=700')">
+                                                            <img src="{{asset('assets/admin/images')}}/gallery.png" height="25"></a></td>
 
                                                     <td>{{ $rs->status }}</td>
                                                     <td><a href="{{route('admin_news_edit',['id'=> $rs->id])}}"> Edit</a></td>
