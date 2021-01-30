@@ -83,7 +83,7 @@
                                 <label for="pwd1">Image</label>
                                 <div class="input-group mb-3">
 
-                                    <input type="file" name="image" value="{{$data->image}}" class="form-control" placeholder="New" aria-label="Password"
+                                    <input type="file" name="image" class="form-control" placeholder="New" aria-label="Password"
                                            aria-describedby="basic-addon3">
                                     @if($rs->image)
                                         <img src = "{{Storage::url($rs->image)}}" height="60" alt="">

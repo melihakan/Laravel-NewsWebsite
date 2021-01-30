@@ -103,8 +103,11 @@ class NewsController extends Controller
         $data->title = $request->input('title');
         $data->keywords = $request->input('keywords');
         $data->description = $request->input('description');
+        if($request->file('image')!=null)
+        {
+            $data->image = Storage::putFile('images', $request->file('image'));
+        }
 
-        $data->image = Storage::putFile('images', $request->file('image'));
         $data->category_id = $request->input('category_id');
         $data->user_id = Auth::id();
         $data->detail = $request->input('detail');

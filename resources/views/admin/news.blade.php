@@ -41,7 +41,7 @@
                                             <thead>
                                             <tr>
                                                 <th>ID</th>
-                                                <th>Parent</th>
+                                                <th>Category</th>
                                                 <th>Title(s)</th>
                                                 <th>Images</th>
                                                 <th>Images Gallery</th>
@@ -55,7 +55,7 @@
 
                                                 <tr>
                                                     <td>{{ $rs->id }}</td>
-                                                    <td>{{ $rs->category_id }}</td>
+                                                    <td>{{ $rs->category->title }}</td>
                                                     <td>{{ $rs->title }}</td>
 
                                                     <td>
