@@ -12,13 +12,15 @@
                         <li><a href="javascript:void(0)"><i class="ti-email"></i> Inbox</a></li>
                         <li><a href="javascript:void(0)"><i class="ti-settings"></i> Account Setting</a></li>
                         @auth
-                            <li><a href="{{route('admin_logout')}}"><i class="fa fa-power-off"></i> Logout</a></li>
+                            <li><a href="{{route('logout')}}"><i class="fa fa-power-off"></i> Logout</a></li>
                         @endauth
                     </ul>
                 </li>
                 <li class="nav-small-cap">--- PERSONAL</li>
                 <li> <a class=" waves-effect waves-dark" href="{{route('admin_category')}}" aria-expanded="false">Categoriler</a>
                 <li> <a class=" waves-effect waves-dark" href="{{route('admin_news')}}" aria-expanded="false">News</a>
+                <li> <a class=" waves-effect waves-dark" href="{{route('admin_setting')}}" aria-expanded="false">Settings</a>
+                <li> <a class=" waves-effect waves-dark" href="{{route('admin_message')}}" aria-expanded="false">Contact Message</a>
                 </li>
                 <li> <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="ti-layout-grid2"></i><span class="hide-menu">Apps</span></a>
                     <ul aria-expanded="false" class="collapse">

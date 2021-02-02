@@ -15,13 +15,9 @@
             <!-- ============================================================== -->
             <div class="row page-titles">
                 <div class="col-md-5 align-self-center">
-                    <h4 class="text-themecolor">News</h4>
+                    <h4 class="text-themecolor">Messages</h4>
                 </div>
-                <div class="col-md-7 align-self-center text-right">
-                    <div class="d-flex justify-content-end align-items-center">
-                        <a href="{{route('admin_news_add')}}" class="btn btn-info d-none d-lg-block m-l-15"><i class="fa fa-plus-circle"></i> Add News </a>
-                    </div>
-                </div>
+
             </div>
             <!-- ============================================================== -->
             <!-- End Bread crumb and right sidebar toggle -->
@@ -32,6 +28,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="card">
+                        @include('home.message')
                         <div class="card-body">
 
                             <div class="card">
@@ -41,13 +38,12 @@
                                             <thead>
                                             <tr>
                                                 <th>ID</th>
-                                                <th>Category</th>
-                                                <th>Title(s)</th>
-                                                <th>Images</th>
-                                                <th>Images Gallery</th>
-                                                <th>Status</th>
-                                                <th>Edit</th>
-                                                <th>Delete</th>
+                                                <th>Name</th>
+                                                <th>Email</th>
+                                                <th>Phone</th>
+                                                <th>Subject </th>
+                                                <th>Messages</th>
+                                                <th>Admin Note</th>
                                             </tr>
                                             </thead>
                                             <tbody>
@@ -55,22 +51,24 @@
 
                                                 <tr>
                                                     <td>{{ $rs->id }}</td>
-                                                    <td>
-                                                        {{\App\Http\Controllers\Admin\CategoryController::getParentsTree($rs->category,$rs->category->title)}}
-                                                    </td>
-                                                    <td>{{ $rs->title }}</td>
+                                                    <td>{{ $rs->name }}</td>
+                                                    <td>{{ $rs->email }}</td>
+                                                    <td>{{ $rs->phone }}</td>
+                                                    <td>{{ $rs->subject }}</td>
+                                                    <td>{{ $rs->message }}</td>
+                                                    <td>{{ $rs->note }}</td>
+                                                    <td>{{ $rs->status }}</td>
 
                                                     <td>
                                                         @if($rs->image)
                                                             <img src = "{{Storage::url($rs->image)}}" height="30" alt="">
                                                         @endif
                                                     </td>
-                                                    <td><a href="{{route('admin_image_add',['news_id' => $rs->id])}}" onclick="return !window.open(this.href,'','top=50 left=100 width=1100,height=700')">
-                                                            <img src="{{asset('assets/admin/images')}}/gallery.png" height="25"></a></td>
+                                                    <td><a href="{{route('admin_message_edit',['id' => $rs->id])}}" onclick="return !window.open(this.href,'','top=50 left=100 width=1100,height=700')">
+                                                            <img src="{{asset('assets/admin/images')}}/edit.png" height="25"></a></td>
 
                                                     <td>{{ $rs->status }}</td>
-                                                    <td><a href="{{route('admin_news_edit',['id'=> $rs->id])}}"> Edit</a></td>
-                                                    <td><a href="{{route('admin_news_delete',['id'=> $rs->id])}}" onclick="return confirm('Delete! Are you sure ?')"> Delete</a></td>
+                                                    <td><a href="{{route('admin_message_delete',['id'=> $rs->id])}}" onclick="return confirm('Delete! Are you sure ?')"> Delete</a></td>
                                                 </tr>
 
                                             @endforeach

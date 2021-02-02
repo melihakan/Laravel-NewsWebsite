@@ -1,127 +1,60 @@
-<!-- Catagory Posts Area Start -->
-<div class="gazette-catagory-posts-area">
-    <div class="container">
-        <div class="row">
-            <div class="col-12 col-md-4">
-                <!-- Single Catagory Post -->
-                <div class="gazette-single-catagory-post">
-                    <div class="single-catagory-post-thumb mb-15">
-                        <img src="img/blog-img/12.jpg" alt="">
-                    </div>
-                    <!-- Post Tag -->
-                    <div class="gazette-post-tag">
-                        <a href="#">Video</a>
-                    </div>
-                    <h5><a href="#" class="font-pt">Save the eniroment with this step</a></h5>
-                    <span>Nov 29, 2017</span>
-                </div>
-                <!-- Single Catagory Post -->
-                <div class="gazette-single-catagory-post">
-                    <h5><a href="#" class="font-pt">Protest to be anounced in January</a></h5>
-                    <span>Nov 29, 2017</span>
-                </div>
-                <!-- Single Catagory Post -->
-                <div class="gazette-single-catagory-post">
-                    <h5><a href="#" class="font-pt">10 Bills that the Congress in voting</a></h5>
-                    <span>Nov 29, 2017</span>
-                </div>
-                <!-- Single Catagory Post -->
-                <div class="gazette-single-catagory-post">
-                    <h5><a href="#" class="font-pt">The narcissism of Donald Trump</a></h5>
-                    <span>Nov 29, 2017</span>
-                </div>
-            </div>
-            <div class="col-12 col-md-4">
-                <div class="row">
-                    <div class="col-12 col-md-6">
-                        <!-- Single Catagory Post -->
-                        <div class="gazette-single-catagory-post">
-                            <div class="single-catagory-post-thumb mb-15">
-                                <img src="img/blog-img/14.jpg" alt="">
-                            </div>
-                            <!-- Post Tag -->
-                            <div class="gazette-post-tag">
-                                <a href="#">Others</a>
-                            </div>
-                            <h5><a href="#" class="font-pt">11 hottest toys for this holiday season</a></h5>
-                            <span>Nov 29, 2017</span>
+@php
+    $parentCategories = \App\Http\Controllers\HomeController::categoryList()
+@endphp
+<div class="header-area">
+    <div class="main-header ">
+        <div class="header-bottom header-sticky">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-xl-10 col-lg-10 col-md-12 header-flex">
+                        <!-- sticky -->
+                        <div class="sticky-logo">
+                            <a href="index.html"><img src="assets/img/logo/logo.png" alt=""></a>
+                        </div>
+                        <!-- Main-menu -->
+                        <div class="main-menu d-none d-md-block">
+                            <nav>
+                                <ul id="navigation">
+                                    <li><a href="{{route('home')}}">Home</a></li>
+                                    <li><a href="categori.html">Category</a></li>
+                                    <li><a href="{{route('aboutus')}}">Aboutus</a></li>
+                                    <li><a href="{{route('references')}}">References</a></li>
+                                    <li><a href="{{route('fag')}}">FAQ</a></li>
+                                    <li><a href="{{route('contact')}}">Contact</a></li>
+
+                                    <li><a href="latest_news.html">Latest News</a></li>
+{{--                                    <li><a href="contact.html">Contact</a></li>--}}
+                                    <li><a href="#">Pages</a>
+                                        <ul class="submenu">
+                                            @foreach($parentCategories as $rs)
+                                                <li><a href="elements.html">{{$rs->title}}</a></li>
+{{--                                                <li><a href="blog.html">Blog</a></li>--}}
+{{--                                                <li><a href="single-blog.html">Blog Details</a></li>--}}
+{{--                                                <li><a href="details.html">Categori Details</a></li>--}}
+                                            @endforeach
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </nav>
                         </div>
                     </div>
-                    <div class="col-12 col-md-6">
-                        <!-- Single Catagory Post -->
-                        <div class="gazette-single-catagory-post">
-                            <div class="single-catagory-post-thumb mb-15">
-                                <img src="img/blog-img/15.jpg" alt="">
+                    <div class="col-xl-2 col-lg-2 col-md-4">
+                        <div class="header-right-btn f-right d-none d-lg-block">
+                            <i class="fas fa-search special-tag"></i>
+                            <div class="search-box">
+                                <form action="#">
+                                    <input type="text" placeholder="Search">
+
+                                </form>
                             </div>
-                            <!-- Post Tag -->
-                            <div class="gazette-post-tag">
-                                <a href="#">Video</a>
-                            </div>
-                            <h5><a href="#" class="font-pt">Get this good feeling about life</a></h5>
-                            <span>Nov 29, 2017</span>
                         </div>
                     </div>
-                    <div class="col-12 col-md-6">
-                        <!-- Single Catagory Post -->
-                        <div class="gazette-single-catagory-post">
-                            <div class="single-catagory-post-thumb mb-15">
-                                <img src="img/blog-img/16.jpg" alt="">
-                            </div>
-                            <!-- Post Tag -->
-                            <div class="gazette-post-tag">
-                                <a href="#">Interview</a>
-                            </div>
-                            <h5><a href="#" class="font-pt">Get this good feeling about life</a></h5>
-                            <span>Nov 29, 2017</span>
-                        </div>
+                    <!-- Mobile Menu -->
+                    <div class="col-12">
+                        <div class="mobile_menu d-block d-md-none"></div>
                     </div>
-                    <div class="col-12 col-md-6">
-                        <!-- Single Catagory Post -->
-                        <div class="gazette-single-catagory-post">
-                            <div class="single-catagory-post-thumb mb-15">
-                                <img src="img/blog-img/17.jpg" alt="">
-                            </div>
-                            <!-- Post Tag -->
-                            <div class="gazette-post-tag">
-                                <a href="#">Video</a>
-                            </div>
-                            <h5><a href="#" class="font-pt">11 hottest toys for this holiday season</a></h5>
-                            <span>Nov 29, 2017</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-md-4">
-                <!-- Single Catagory Post -->
-                <div class="gazette-single-catagory-post">
-                    <div class="single-catagory-post-thumb mb-15">
-                        <img src="img/blog-img/13.jpg" alt="">
-                    </div>
-                    <!-- Post Tag -->
-                    <div class="gazette-post-tag">
-                        <a href="#">Video</a>
-                    </div>
-                    <h5><a href="#" class="font-pt">10 Bills that the Congress in voting</a></h5>
-                    <span>Nov 29, 2017</span>
-                </div>
-                <!-- Single Catagory Post -->
-                <div class="gazette-single-catagory-post">
-                    <h5><a href="#" class="font-pt">Blair can't save Britain from Brexit</a></h5>
-                    <span>Nov 29, 2017</span>
-                </div>
-                <!-- Single Catagory Post -->
-                <div class="gazette-single-catagory-post">
-                    <h5><a href="#" class="font-pt">Save the eniroment with this step</a></h5>
-                    <span>Nov 29, 2017</span>
-                </div>
-                <!-- Single Catagory Post -->
-                <div class="gazette-single-catagory-post">
-                    <h5><a href="#" class="font-pt">Protest to be anounced in January</a></h5>
-                    <span>Nov 29, 2017</span>
                 </div>
             </div>
         </div>
     </div>
 </div>
-
-<!-- Catagory Posts Area End -->

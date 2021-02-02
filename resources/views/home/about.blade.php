@@ -1,3 +1,6 @@
+@php
+    $setting = \App\Http\Controllers\HomeController::getsetting()
+@endphp
 <!doctype html>
 <html class="no-js" lang="zxx">
 <head>
@@ -7,11 +10,9 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>@yield('title')</title>
-    <meta name="description" content="@yield('description')">
-    <meta name="keywords" content="@yield('keywords')">
     <meta name="author" content="MelihAKAN">
 
-{{--    <meta name="viewport" content="width=device-width, initial-scale=1">--}}
+    {{--    <meta name="viewport" content="width=device-width, initial-scale=1">--}}
 
     <link rel="manifest" href="site.webmanifest">
     <link rel="shortcut icon" type="image/x-icon" href="{{ asset('assets')}}/img/favicon.ico">
@@ -32,22 +33,19 @@
 </head>
 
 <body>
-@include('home._header');
+@include('home._header')
+@section('title','About Us'.$setting->title)
 
-<!-- Main Content Area Start -->
-<section class="main-content-wrapper section_padding_100">
+
+
+<!-- ================ contact section start ================= -->
+<section class="contact-section">
     <div class="container">
 
-            @include('home._slide');
-            @include('home._video');
-
-        </div>
+        {!! $setting->aboutus !!}
     </div>
 </section>
-    <!-- Main Content Area End -->
+<!-- ================ contact section end ================= -->
 
-@include('home._footer');
+@include('home._footer')
 
-
-</body>
-</html>

@@ -142,7 +142,7 @@
 
                                                             </select>
                                                         </div>
-                                                    </form>
+
                                                 </div>
                                             </div>
                                         </div>
@@ -278,6 +278,7 @@
                                     });
                                 </script>
                                 <button type="submit" class="btn btn-success waves-effect waves-light m-r-10">Update News</button>
+                                </form>
                             </div>
                         </div>
                     </div>

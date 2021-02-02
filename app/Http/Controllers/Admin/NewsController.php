@@ -21,6 +21,7 @@ class NewsController extends Controller
     {
         //
         $datalist = News::all();
+
         return view('admin.news', ['datalist'=>$datalist]);
     }
 
@@ -32,7 +33,7 @@ class NewsController extends Controller
     public function create()
     {
         //
-        $datalist = Category::all();
+        $datalist = Category::with('children')->get();
         return view('admin.news_add',['datalist'=>$datalist]);
     }
 
@@ -84,7 +85,7 @@ class NewsController extends Controller
     {
         //
         $data = News::find($id);
-        $datalist = Category::all();
+        $datalist = Category::with('children')->get();
         return view('admin.news_edit',['data' => $data,'datalist' => $datalist]);
 
     }

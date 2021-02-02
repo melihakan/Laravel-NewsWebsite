@@ -45,10 +45,12 @@
                         <form class="form p-t-20" action="{{route('admin_news_update',['id'=>$data->id])}}" method="post" enctype="multipart/form-data">
                             @csrf
                             <div class="form-group">
-                                <label >Parent</label>
+                                <label >Category</label>
                                 <select class="form-control select2" name="category_id" style="width: 100%">
                                     @foreach($datalist as $rs)
-                                        <option value="{{ $rs->id }}" @if($rs->id == $data->category_id) selected="selected" @endif>{{ $rs->title }}</option>
+                                        <option value="{{ $rs->id }}" @if($rs->id == $data->category_id) selected="selected" @endif>
+                                            {{ \App\Http\Controllers\Admin\CategoryController::getParentsTree($rs,$rs->title)}}
+                                        </option>
                                     @endforeach
 
                                 </select>
@@ -83,7 +85,7 @@
                                 <label for="pwd1">Image</label>
                                 <div class="input-group mb-3">
 
-                                    <input type="file" name="image" class="form-control" placeholder="New" aria-label="Password"
+                                    <input type="file" name="image" class="form-control" placeholder="New"
                                            aria-describedby="basic-addon3">
                                     @if($rs->image)
                                         <img src = "{{Storage::url($rs->image)}}" height="60" alt="">
