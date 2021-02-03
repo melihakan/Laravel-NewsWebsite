@@ -19,10 +19,9 @@ Route::get('/welcome', function () {
 Route::get('/home2', function () {
     return view('welcome');
 });
-Route::get('/', function () {
-    return view('home.index');
-});
-Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::get('/', [HomeController::class, 'index'])->name('home');
+
+Route::get('/home', [HomeController::class, 'index'])->name('homepage');
 
 
 Route::get('/aboutus', [HomeController::class, 'aboutus'])->name('aboutus');
@@ -30,7 +29,10 @@ Route::get('/references', [HomeController::class, 'references'])->name('referenc
 Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
 Route::post('/sendmessage', [HomeController::class, 'sendmessage'])->name('sendmessage');
 Route::get('/fag', [HomeController::class, 'fag'])->name('fag');
+Route::get('/news/{id}/{slug}', [HomeController::class, 'news'])->name('news');
 Route::get('/categorynews/{id}/{slug}', [HomeController::class, 'categorynews'])->name('categorynews');
+Route::post('/getnews', [HomeController::class, 'getnews'])->name('getnews');
+
 
 
 

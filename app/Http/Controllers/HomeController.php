@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\Image;
 use App\Models\Message;
 use App\Models\News;
+use App\Models\Review;
 use App\Models\Setting;
 use Hamcrest\Core\Set;
 use Illuminate\Http\Request;
@@ -26,21 +28,47 @@ class HomeController extends Controller
     //
     public function index()
     {
-        $slider = News::limit(4)->get();
-        print_r($slider);
-        exit();
+        $slider = News::select('id','title','image','detail','slug')->limit(4)->get();
+        $daily = News::select('id','title','image','detail','slug')->limit(4)->inRandomOrder()->get();
+        $last = News::select('id','title','image','detail','slug')->limit(4)->orderByDesc('id')->get();
+//        print_r($slider);
+//        exit();
         $data = [
-            'setting'=>$setting,
+            #'setting'=>$setting,
             'slider'=>$slider,
-            'page'=>'home'
+            'daily'=>$daily,
+            'last'=>$last,
+            'page'=>'home',
 
         ];
 
-
-
-        return view('home.index');
+        return view('home.index',$data);
     }
 
+    public function categorynews($id,$slug)
+    {
+        $datalist = News::where('category_id',$id)->get();
+        $data = Category::find($id);
+//        print_r($data);
+//        exit();
+        return view('home.category_news',['data'=>$data,'datalist'=>$datalist]);
+    }
+    public function news($id,$slug)
+    {
+        $datalist = Image::where('news_id',$id)->get();
+        $data = News::find($id);
+        $reviews = Review::where('news_id',$id)->get();
+
+//        print_r($data);
+//        exit();
+       return view('home.news_detail',['data'=>$data,'datalist'=>$datalist,'reviews'=>$reviews]);
+    }
+    public function getnews(Request $request)
+    {
+        $data = News::where('title',$request->input('search'))->first();
+
+        return redirect()->route('news',['id'=>$data->id,'slug'=>$data->slug]);
+    }
     public function aboutus()
     {
         return view('home.about');

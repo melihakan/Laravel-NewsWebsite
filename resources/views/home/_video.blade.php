@@ -1,29 +1,23 @@
 <!-- Start Youtube -->
+
 <div class="youtube-area video-padding">
+
     <div class="container">
+
         <div class="row">
             <div class="col-12">
                 <div class="video-items-active">
-                    <div class="video-items text-center">
-                        <iframe src="https://www.youtube.com/embed/CicQIuG8hBo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                    <div class="video-items text-center">
-                        <iframe  src="https://www.youtube.com/embed/rIz00N40bag" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                    <div class="video-items text-center">
-                        <iframe src="https://www.youtube.com/embed/CONfhrASy44" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-                    </div>
+                    @foreach($slider as $rs)
                     <div class="video-items text-center">
-                        <iframe src="https://www.youtube.com/embed/lq6fL2ROWf8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
+                        <img src="{{Storage::url($rs->image)}} "style="width: 1100px;height: 300px" frameborder="0"></a>
+                        <a href="{{route('news',['id'=>$rs->id,'slug'=>$rs->slug])}}"> <h3>{{$rs->title}}</h3></a>
                     </div>
-                    <div class="video-items text-center">
-                        <iframe src="https://www.youtube.com/embed/0VxlQlacWV4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>
+
         <div class="video-info">
             <div class="row">
                 <div class="col-lg-6">
@@ -32,42 +26,28 @@
                             <span class="color1">Politics</span>
                         </div>
                         <div class="bottom-caption">
-                            <h2>Welcome To The Best Model Winner Contest At Look of the year</h2>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod ipsum dolor sit. Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod ipsum dolor sit. Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod ipsum dolor sit lorem ipsum dolor sit.</p>
+                            <h2></h2>
+                            <p></p>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <div class="testmonial-nav text-center">
                         <div class="single-video">
-                            <iframe  src="https://www.youtube.com/embed/CicQIuG8hBo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                            <div class="video-intro">
-                                <h4>Welcotme To The Best Model Winner Contest</h4>
-                            </div>
+
+
                         </div>
                         <div class="single-video">
-                            <iframe  src="https://www.youtube.com/embed/rIz00N40bag" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                            <div class="video-intro">
-                                <h4>Welcotme To The Best Model Winner Contest</h4>
-                            </div>
+
                         </div>
                         <div class="single-video">
-                            <iframe src="https://www.youtube.com/embed/CONfhrASy44" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                            <div class="video-intro">
-                                <h4>Welcotme To The Best Model Winner Contest</h4>
-                            </div>
+
                         </div>
                         <div class="single-video">
-                            <iframe src="https://www.youtube.com/embed/lq6fL2ROWf8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                            <div class="video-intro">
-                                <h4>Welcotme To The Best Model Winner Contest</h4>
-                            </div>
+
                         </div>
                         <div class="single-video">
-                            <iframe src="https://www.youtube.com/embed/0VxlQlacWV4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                            <div class="video-intro">
-                                <h4>Welcotme To The Best Model Winner Contest</h4>
-                            </div>
+
                         </div>
                     </div>
                 </div>
@@ -76,6 +56,11 @@
     </div>
 </div>
 <!-- End Start youtube -->
+
+
+
+
+
 <!--  Recent Articles start -->
 <div class="recent-articles">
     <div class="container">
@@ -100,15 +85,17 @@
                                 <h4><a href="#">Welcome To The Best Model  Winner Contest</a></h4>
                             </div>
                         </div>
+                        @foreach($last as $rs)
                         <div class="single-recent mb-100">
                             <div class="what-img">
-                                <img src="{{ asset('assets')}}/img/news/recent2.jpg" alt="">
+                                <img src="{{Storage::url($rs->image)}}" alt="">
                             </div>
                             <div class="what-cap">
-                                <span class="color1">Night party</span>
-                                <h4><a href="#">Welcome To The Best Model  Winner Contest</a></h4>
+                                <span class="color1">{{$rs->title}}</span>
+                                <h4><a href="{{route('news',['id'=>$rs->id,'slug'=>$rs->slug])}}">{{$rs->detail}}</a></h4>
                             </div>
                         </div>
+                        @endforeach
                         <div class="single-recent mb-100">
                             <div class="what-img">
                                 <img src="{{ asset('assets')}}/img/news/recent3.jpg" alt="">

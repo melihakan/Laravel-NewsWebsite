@@ -16,5 +16,6 @@
 @endsection
 
 @section('content')
-    @include('home._slide')
+{{--    @include('home._slide')--}}
+    @include('home._video')
 @endsection
