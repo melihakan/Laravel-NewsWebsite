@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Livewire\Review;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
@@ -15,6 +17,22 @@ class UserController extends Controller
     public function index()
     {
         return view('home.user_profile');
+    }
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function myreviews()
+    {
+        $datalist = \App\Models\Review::where('user_id','=',Auth::user()->id)->get();
+        return view('home.user_reviews',['datalist'=>$datalist]);
+    }
+    public function destroymyreview(Review $review,$id)
+    {
+        $data = \App\Models\Review::find($id);
+        $data = delete();
+        return redirect()->back()->with('success','Review Deleted');
     }
 
     /**

@@ -21,7 +21,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="d-flex">
+                        <a href="{{route('myreviews')}}" class="d-flex">
                             <p>My Reviews</p>
 
                         </a>
