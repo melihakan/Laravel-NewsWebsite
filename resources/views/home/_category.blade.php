@@ -18,7 +18,7 @@
                                     <li><a href="{{route('home')}}">Home</a></li>
                                     <li><a href="{{route('aboutus')}}">Aboutus</a></li>
                                     <li><a href="{{route('references')}}">References</a></li>
-                                    <li><a href="{{route('fag')}}">FAQ</a></li>
+                                    <li><a href="{{route('faq')}}">FAQ</a></li>
                                     <li><a href="{{route('contact')}}">Contact</a></li>
 
                                     <li><a href="latest_news.html">Latest News</a></li>

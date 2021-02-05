@@ -13,7 +13,9 @@ padding-left: 300px;
 
 }
 
+
     </style>
+</head>
 <header>
 
     <!-- Header Start -->

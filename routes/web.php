@@ -28,7 +28,7 @@ Route::get('/aboutus', [HomeController::class, 'aboutus'])->name('aboutus');
 Route::get('/references', [HomeController::class, 'references'])->name('references');
 Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
 Route::post('/sendmessage', [HomeController::class, 'sendmessage'])->name('sendmessage');
-Route::get('/fag', [HomeController::class, 'fag'])->name('fag');
+Route::get('/faq', [HomeController::class, 'faq'])->name('faq');
 Route::get('/news/{id}/{slug}', [HomeController::class, 'news'])->name('news');
 Route::get('/categorynews/{id}/{slug}', [HomeController::class, 'categorynews'])->name('categorynews');
 Route::post('/getnews', [HomeController::class, 'getnews'])->name('getnews');
@@ -113,6 +113,24 @@ Route::middleware('auth')->prefix('myaccount')->namespace('myaccount')->group(fu
 Route::middleware('auth')->prefix('user')->namespace('user')->group(function () {
 
     Route::get('/profile', [\App\Http\Controllers\UserController::class, 'index'])->name('userprofile');
+
+    Route::prefix('news')->group(function () {
+
+        Route::get('/', [\App\Http\Controllers\NewsController::class, 'index'])->name('user_news');
+        Route::get('/create', [\App\Http\Controllers\NewsController::class, 'create'])->name('user_news_add');
+        Route::post('/store', [\App\Http\Controllers\NewsController::class, 'store'])->name('user_news_store');
+        Route::get('/edit/{id}', [\App\Http\Controllers\NewsController::class, 'edit'])->name('user_news_edit');
+        Route::post('/update/{id}', [\App\Http\Controllers\NewsController::class, 'update'])->name('user_news_update');
+        Route::get('/delete/{id}', [\App\Http\Controllers\NewsController::class, 'destroy'])->name('user_news_delete');
+        Route::get('/show', [\App\Http\Controllers\NewsController::class, 'show'])->name('user_news_show');
+    });
+    Route::prefix('image')->group(function () {
+        Route::get('/create/{news_id}', [\App\Http\Controllers\Admin\ImageController::class, 'create'])->name('user_image_add');
+        Route::post('/store/{news_id}', [\App\Http\Controllers\Admin\ImageController::class, 'store'])->name('user_image_store');
+        Route::get('/delete/{id}/{news_id}', [\App\Http\Controllers\Admin\ImageController::class, 'destroy'])->name('user_image_delete');
+        Route::get('/show', [\App\Http\Controllers\Admin\ImageController::class, 'show'])->name('user_image_show');
+    });
+
 });
 
 
