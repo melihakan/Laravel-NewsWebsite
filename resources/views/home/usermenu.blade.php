@@ -10,30 +10,15 @@
                             <p>My Profile</p>
                         </a>
                     </li>
-                    <li>
-                        <a href="#" class="d-flex">
-                            <p>Travel news</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="d-flex">
-                            <p>My Orders</p>
-                        </a>
-                    </li>
+
                     <li>
                         <a href="{{route('myreviews')}}" class="d-flex">
                             <p>My Reviews</p>
-
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="d-flex">
+                        <a href="{{route('user_news')}}" class="d-flex">
                             <p>My News</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="d-flex">
-                            <p>My Messages</p>
                         </a>
                     </li>
                     <li>
@@ -41,6 +26,37 @@
                             <p>Logout</p>
                         </a>
                     </li>
+                    @php
+                        $userRoles = Auth::user()->roles->pluck('name');
+                    @endphp
+                    @if ($userRoles->contains('admin'))
+                    <li>
+                        <a href="{{route('admin_home')}}" class="d-flex">
+                            <p>Admin Panel</p>
+                        </a>
+                    </li>
+                    @endif
+                    @if ($userRoles->contains('muhabir'))
+                        <li>
+                            <a href="{{route('home')}}" class="d-flex">
+                                <p>Muhabir Panel</p>
+                            </a>
+                        </li>
+                    @endif
+                    @if ($userRoles->contains('yazar'))
+                        <li>
+                            <a href="{{route('home')}}" class="d-flex">
+                                <p>Yazar Panel</p>
+                            </a>
+                        </li>
+                    @endif
+                    @if ($userRoles->contains('user'))
+                        <li>
+                            <a href="{{route('home')}}" class="d-flex">
+                                <p>User Panel</p>
+                            </a>
+                        </li>
+                    @endif
                 </ul>
             </aside>
         </div>

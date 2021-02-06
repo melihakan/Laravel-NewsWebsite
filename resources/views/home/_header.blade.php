@@ -27,8 +27,8 @@ padding-left: 300px;
                         <div class="row d-flex justify-content-between align-items-center">
                             <div class="header-info-left">
                                 <ul>
-                                    @if ($setting->twitter != null) <a href="{{$setting->twitter }}" target="_blank"><i class="fab fa-twitter"></i></a> @endif
-                                    @if ($setting->instagram != null) <a href="{{$setting->instagram }}" target="_blank"><i class="fab fa-instagram"></i></a> @endif
+                                    @if ($setting->twitter != null) <a href="{{$setting->twitter }}" target="_blank" style="color: red"><i class="fab fa-twitter"></i></a> @endif
+                                    @if ($setting->instagram != null) <a href="{{$setting->instagram }}" target="_blank" style="color: red"><i class="fab fa-instagram"></i></a> @endif
                                     <li> <a href="#"><i class="fab fa-pinterest-p"></i></a></li>
 
                                 </ul>
