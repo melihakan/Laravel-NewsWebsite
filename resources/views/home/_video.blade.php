@@ -88,28 +88,12 @@
                             </div>
                             <div class="what-cap">
                                 <span class="color1">{{$rs->title}}</span>
-                                <h4><a href="{{route('news',['id'=>$rs->id,'slug'=>$rs->slug])}}">{{$rs->detail}}</a></h4>
+                                <h4><a href="{{route('news',['id'=>$rs->id,'slug'=>$rs->slug])}}">{{$rs->title}}</a></h4>
                             </div>
                         </div>
                         @endforeach
-                        <div class="single-recent mb-100">
-                            <div class="what-img">
-                                <img src="{{ asset('assets')}}/img/news/recent3.jpg" alt="">
-                            </div>
-                            <div class="what-cap">
-                                <span class="color1">Night party</span>
-                                <h4><a href="#">Welcome To The Best Model  Winner Contest</a></h4>
-                            </div>
-                        </div>
-                        <div class="single-recent mb-100">
-                            <div class="what-img">
-                                <img src="{{ asset('assets')}}/img/news/recent2.jpg" alt="">
-                            </div>
-                            <div class="what-cap">
-                                <span class="color1">Night party</span>
-                                <h4><a href="#">Welcome To The Best Model  Winner Contest</a></h4>
-                            </div>
-                        </div>
+
+
                     </div>
                 </div>
             </div>

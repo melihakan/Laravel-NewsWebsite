@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html class="no-js" lang="zxx">
 <head>
@@ -47,29 +48,30 @@
             <section class="blog_area single-post-area section-padding">
                 <div class="container">
                     <div class="row">
+
                         <div class="col-lg-8 posts-list">
                             <div class="single-post">
                                 @foreach($datalist as $rs)
                                 <div class="feature-img">
                                     <img class="img-fluid" src="{{Storage::url($rs->image)}}" alt="">
                                 </div>
-
+                                @endforeach
                                 <div class="blog_details">
-                                    <h2>{{$rs->title}}</h2>
+                                    <h2>{{$data->title}}</h2>
 
                                     <ul class="blog-info-link mt-3 mb-4">
-                                        <li><a href="#"><i class="fa fa-user"></i> Travel, Lifestyle</a></li>
+
                                         <li><a href="#"><i class="fa fa-comments"></i> 03 Comments</a></li>
                                     </ul>
                                     <p class="excert">
-                                     {{$rs->detail}}
+                                     {!! $data->detail !!}
                                     </p>
 
 
                                 </div>
 
                             </div>
-                            @endforeach
+
 {{--                            @php--}}
 {{--                                $countreview = \App\Http\Controllers\HomeController::countreview($data->id);--}}
 {{--                            @endphp--}}

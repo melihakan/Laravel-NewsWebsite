@@ -131,6 +131,6 @@ class NewsController extends Controller
         //DB::table('categories')->where('id','=',$id)->delete();
         $data = News::find($id);
         $data->delete();
-        return redirect()->route('user_category');
+        return redirect()->route('user_news');
     }
 }

@@ -45,6 +45,16 @@ class HomeController extends Controller
 
         return view('home.index',$data);
     }
+    public function news($id,$slug)
+    {
+        $datalist = Image::where('news_id',$id)->get();
+        $data = News::find($id);
+        $reviews = Review::where('news_id',$id)->get();
+
+//        print_r($data);
+//        exit();
+        return view('home.news_detail',['data'=>$data,'datalist'=>$datalist,'reviews'=>$reviews]);
+    }
 
     public function categorynews($id,$slug)
     {
@@ -54,16 +64,7 @@ class HomeController extends Controller
 //        exit();
         return view('home.category_news',['data'=>$data,'datalist'=>$datalist]);
     }
-    public function news($id,$slug)
-    {
-        $datalist = Image::where('news_id',$id)->get();
-        $data = News::find($id);
-        $reviews = Review::where('news_id',$id)->get();
 
-//        print_r($data);
-//        exit();
-       return view('home.news_detail',['data'=>$data,'datalist'=>$datalist,'reviews'=>$reviews]);
-    }
     public function getnews(Request $request)
     {
         $data = News::where('title',$request->input('search'))->first();
